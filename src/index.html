@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<meta charset="utf-8">
+<title>Last is Worst</title>
+<link rel="stylesheet" type="text/css" href="myStyle.css" />
+</head>
+
+<body>
+<!-- 音频控件 -->
+<audio id="bgmusic" src="sound/bgmusic.mp3" loop="loops"></audio>
+<audio id="correctSelect" src="sound/correctSelect.wav"></audio>
+<audio id="incorrectSelect" src="sound/incorrectSelect.wav"></audio>
+<audio id="OBtn" src="sound/OBtn.wav"></audio>
+<audio id="XBtn" src="sound/XBtn.wav"></audio>
+<audio id="SetEnd" src="sound/SetEnd.wav"></audio>	
+<!-- 游戏公告 -->
+<div class="menu" id="menu_about"></div>
+<div class="menu" id="menu_rule"></div>
+<div class="menu" id="menu_top">
+	<div class="topTitle">Top</div>
+	<div id="topDiv"></div>
+</div>
+
+<!-- 登入界面 -->
+<div  id="menu_userName">
+	<img id="logins_info" src="img/info1.jpg" />
+	<input class="logins_inputtxt" name="txtAge" type="text" value="" />	
+	<input class="logins_inputbtn" name="frmSubmit" type="button" value="Start Game!" onclick="getUserName()"/>
+</div>
+<!-- 游戏结束 -->
+<div id="menu_gameOver">
+	<span class="gameOver_Title">Game Over</span><br/>
+	<span class="gameOver_message">player取走了最后一个方块</span><br/>
+	<span class="gameOver_message">你输了，可以让大帝教你写代码哦</span><br/>
+	<span class="gameOver_Name">computer:</span>
+	<span class="gameOver_Score">0</span><br/>	
+	<span class="gameOver_Name">player:</span>
+	<span class="gameOver_Score">0</span><br/>
+	<input class="gameOver_RestartBtn" type="button" value="Restart" onclick="gameOverToRestart()"/><br/>
+	<input class="gameOver_TopBtn" type="button" value="Top" onclick="gameOverToTop()"/>
+</div>
+
+<!-- 游戏布局 -->
+<div id="layout">
+	<div id="leftAside">		
+	</div>
+	<div id="middlePart">
+		<ul id="navs" data-open="here" data-close="there">
+			<li id="menuBtn_music">music</li>
+			<li id="menuBtn_top">top</li>				
+			<li id="menuBtn_restart">restart</li>
+			<li id="menuBtn_rule">rule</li>
+			<li id="menuBtn_about">about</li>
+		</ul>
+		<div id="header"><b>Last is Worst</b></div>
+		<div id="board">
+			<div id="chessBoardBorder">
+				<div id="chessboard">
+				<!-- 此处通过js文件插入方格			 -->
+				</div>
+			</div>
+		</div>
+		<div id="option">
+			<div id="optionBorder">
+				<div class="player"> 
+					<p class="playerleft">player1:</p>
+					<p class="playerName">computer</p>
+					<br/>
+					<p class="playerleft">score:</p>
+					<p class="playerScore">0</p>
+				</div>
+
+				<div><a id="O_Btn" class="bigBtn" href="javascript:void(0);">O</a></div>
+				<div><a id="X_Btn" class="bigBtn" href="javascript:void(0);">X</a></div>
+				<div class="player"> 
+					<p class="playerleft">player2:</p>
+					<p class="playerName">player</p>
+					<br/>
+					<p class="playerleft">score:</p>
+					<p class="playerScore">0</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="rightAside">		
+	</div> 
+</div>
+
+
+
+<script>
+var xScale = 7;
+var yScale = 7;
+var CoreGridPicture = []; //删除孤立方块后得到的方块棋盘
+var TempGridPicture=[]; //傻逼计算机每次尝试后得到的棋盘
+var VIRectNum; //CoreGridPicture中state为"active"且不含孤立点对的方块个数
+var RestRectNum = 36;
+var VIRestRectNum = 36; //TempGridPicture中state为"active"的方块个数【】
+var decision = [];//储存傻逼计算机点击的方块
+
+var turn = 0 ;			//0表示游戏未开始，1表示轮到玩家1(computer)，2表示轮到玩家2(玩家)
+var GridPicture = [];	//全局变量，放在最外面
+var ClickedNum = 0;		//当前被按的数量，最多3
+var Score1 = 0;			//玩家1（电脑）分数
+var Score2 = 0;			//玩家2（玩家）分数
+var musicOn = 1; 		//musicOn为1：背景音乐开启  musicOn为0：背景音乐关闭
+var playerName = "ISB";	//给不取名字的孩子
+var infoPictureIndex = 1; 
+var recordNum;
+
+
+//记录本地玩家名称及其分数，相邻记录之间用逗号间隔，数组末尾有空格
+if (localStorage.hasOwnProperty("UserName") == false){
+	localStorage.UserName = "";
+}
+if (localStorage.hasOwnProperty("Score") == false){
+	localStorage.Score = "";
+}
+
+</script>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="AI.js" ></script>
+<script type="text/javascript" src="UI.js"></script>
+
+</body>
+</html>

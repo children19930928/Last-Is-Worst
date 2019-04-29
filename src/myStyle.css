@@ -1,0 +1,433 @@
+/****************************************页面布局****************************************/
+body{
+	margin:0px;
+	font:.85em/1.2 	"微软雅黑","microsoft yahei",arial;
+	background:#f2f2f2;
+	background:linear-gradient(left,#f2f2f2,#dddddd);
+	background:-moz-linear-gradient(left,#f2f2f2,#dddddd);
+	background:-webkit-linear-gradient(left,#f2f2f2,#dddddd);
+	background:-o-linear-gradient(left,#f2f2f2,#dddddd);
+}
+#layout{
+	width:1400px;
+	height:640px;
+}
+#leftAside{
+	width:225px;
+	height:640px;
+	float:left;
+}
+#middlePart{
+	width:950px;
+	height:640px;
+	background-image: url(img/background.jpg);
+	background-size: cover;
+	float:left;
+	margin-left: auto;
+	margin-right: auto;
+}
+#rightAside{
+	width:225px;
+	height:640px;
+	float:left;
+}
+/*标题*/
+#header{
+	width:950px;
+	height:100px;
+	line-height:100px;
+	font-family: "Curlz MT";
+	font-size:60px;
+	color:rgb(255, 255, 255);
+	text-align: center;
+}
+/*桌面（放棋盘）*/
+#board{
+	width:600px;
+	height:600px;
+	float:left;
+	padding-left:60px;
+	padding-top:0px;
+}
+/*棋盘外框*/
+#chessBoardBorder{
+	width:500px;
+	height:500px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius:30px;
+}
+/*棋盘*/
+#chessboard{
+	width:420px;
+	height:420px;
+	margin-left:40px;
+	margin-top:40px;
+	float:left;
+}
+/*侧栏信息*/
+#option{
+	width:280px;
+	height:500px;
+	float:left;
+	margin-left:-60px;
+}
+/*侧栏边界*/
+#optionBorder{
+	width:280px;
+	height:500px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius:30px;
+}
+/*方格*/
+.grid{
+	opacity: 0;
+	width: 60px;
+	height: 60px;
+	background-color: #156;
+	border:solid, 1px, #222;
+	float: left;
+	overflow: hidden;	
+}
+
+/***************************************积分榜*********************************/
+#topDiv{
+	width:700px;
+	height:400px;
+	position: relative;
+	left:60px;
+	top:20px;
+}
+
+.topTitle{
+	width:700px;
+	height:60px;
+	position: relative;
+	left:60px;
+	top:10px;
+	font-family:"微软雅黑";
+	font-size:50px;
+	color:rgb(255, 255, 255);
+	text-align:center;
+}
+
+.topRecord{
+	width:700px;
+	height:80px;
+	padding-top: 10px;
+	font-family:"微软雅黑";
+	font-size:30px;
+	color:rgb(255, 255, 255);
+}
+
+/****************************************弹出菜单****************************************/
+.menu{
+	position:fixed;
+	left:270px;
+	top:100px;
+	width: 850px;
+	height: 500px;
+	overflow: hidden;
+	background-color: #000;
+	opacity: 0.8;
+	cursor: pointer;
+	display: none;
+	z-index:1;
+	border-radius: 55px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#menu_about{
+	background-image:url(img/about.jpg);
+}
+
+#menu_rule{
+	background-image:url(img/rule.jpg);	
+}
+#menu_top{
+
+}
+/*************************************进入游戏输入用户名****************************************/
+#menu_userName{
+	z-index: 10;
+	border-radius: 55px;
+	position:fixed;
+	left:265px;
+	top:90px;
+	width: 860px;
+	height: 520px;
+	overflow: hidden;
+	background-color: #000;
+	opacity: 0.9;
+	display:none;
+}
+
+.logins_inputtxt{
+	position: relative;
+	left: 120px;
+	top:70px;
+	width: 280px;
+	height: 50px;
+	font-size: 40px;
+	border-radius: 10px;
+	border: 1px solid rgba(0,0,0,0.1);
+	font-family: "Lucida Handwriting";
+	text-align: center;
+	margin-right: 30px;
+	float:left;
+	display:none;
+}
+.logins_inputbtn{
+	position: relative;
+	top:70px;
+	left: 150px;
+	width: 280px;
+	height: 50px;
+	border-radius:10px; 
+	font-size: 30px;
+	font-family: "Lucida Handwriting";
+	float:left;
+	display:none;
+}
+#logins_info{
+	position:relative;
+	left:80px;
+	top:50px;
+	width:650px;
+	height:330px;
+}
+/*************************************游戏介绍界面****************************************/
+#menu_gameOver{
+	z-index: 10;
+	border-radius: 55px;
+	position:fixed;
+	left:255px;
+	top:80px;
+	width: 650px;
+	height: 500px;
+	overflow: hidden;
+	background-color: #000;
+	opacity: 0.8;
+	display: none;
+	padding-left: 50px;
+	padding-top: 20px;
+}
+.gameOver_Title{
+	font-family: 'Broadway';
+	font-size: 6em;
+	left: 80px;
+	color: #fff;
+}
+.gameOver_message{
+	font-family: 'Broadway';
+	font-size: 3em;
+	left: 80px;
+	color: #fff;
+	font-family: '微软雅黑','黑体';
+	margin-bottom: 20px;
+}
+.gameOver_Score{
+	display:inline-block; 
+	font-family: 'Broadway';
+	color: #fff;
+	font-size:4em;
+	left:30px;
+}
+.gameOver_Name{
+	display:inline-block; 
+	font-family: '微软雅黑','黑体';
+	color: #fff;
+	font-size:4em;
+}
+.gameOver_RestartBtn{
+	position: relative;
+	width: 280px;
+	height: 50px;
+	border-radius:10px; 
+	font-size: 30px;
+	font-family: "Berlin Sans FB Demi";
+	margin-top: 20px;
+	margin-bottom: 0px
+}
+.gameOver_TopBtn{
+	position: relative;
+	width: 280px;
+	height: 50px;
+	border-radius:10px; 
+	font-size: 30px;
+	font-family: "Berlin Sans FB Demi";
+	margin-top: 20px;
+	margin-bottom: 20px
+}
+/*************************************player和score信息****************************************/
+div.player{
+	width: 230px;
+	height: 120px;
+	background:rgba(46, 48, 146, 0.9);
+	border-radius: 15px;
+	position: relative;
+	margin-left: 25px;*/
+	left:20px;
+	top:15px;
+}
+.playerleft{
+	display:inline-block; 
+	float:left;
+	margin-left:10px;
+	margin-right:0px;	
+	padding-top: 0px;
+	font-family: 'Castellar';
+	color: #fff;
+	font-size:1.5em;
+}
+.playerName{
+	display:inline-block; 
+	float:right;
+	margin-left:0px;
+	margin-right:20px;	
+	padding-top: 0px;
+	font-family: '微软雅黑','黑体';
+	color: #fff;
+	font-size:1.5em;
+}
+.playerScore{
+	display:inline-block; 
+	float:right;
+	margin-left:0px;
+	margin-right:20px;	
+	padding-top: 0px;
+	font-family: 'Broadway';
+	color: #fff;
+	font-size:1.5em;
+}
+
+/****************************************确认/取消按钮****************************************/
+a.bigBtn{
+	position: relative;
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+    background-color: rgba(219,87,5,1);
+    font-weight: 700;
+    font-size: 3em;
+    display: block;
+    padding: 2px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    -moz-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    margin: 40px auto;
+	width: 130px;
+	text-align: center;
+	
+	-webkit-transition: all .1s ease;
+	-moz-transition: all .1s ease;
+	-ms-transition: all .1s ease;
+	-o-transition: all .1s ease;
+	transition: all .1s ease;
+
+	cursor: pointer;
+}
+a.bigBtn:active {
+    -webkit-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    -moz-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    position: relative;
+    top: 2px;
+}
+
+
+/****************************************选中后效果****************************************/
+@-webkit-keyframes twinkling{
+	0%{
+		opacity:0.5;				/*透明度为0*/
+	}
+	100%{
+		opacity:1;				/*透明度为1*/
+	}
+}
+.selected{
+	-webkit-animation: twinkling 0.3s infinite ease-in-out;
+}
+/****************************************左下角弹出菜单****************************************/
+#navs{ 
+	position:fixed;
+	left:4px;
+	bottom:0px;
+	width:50px;
+	height:50px;
+	line-height:50px;
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	text-align:center;
+	color:#fff;
+	cursor:pointer;
+	opacity:1
+}
+#navs>li,#navs:after{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	border-radius:50%;
+	-webkit-border-radius:50%;
+	background-color:#4ECDC4;
+}
+#navs>li{
+	transition:all .6s;
+	-webkit-transition:all .6s;
+	-moz-transition:.6s;
+}
+#navs:after{
+	content:attr(data-close);
+	z-index:0;
+	border-radius:50%;
+	-webkit-border-radius:50%;
+}
+#navs.active:after{
+	content:attr(data-open)
+}
+#navs{ 
+	font-family: 'Berlin Sans FB Demi';
+	font-size: 20px;
+	color:#fff;
+	position:fixed;
+	left:4px;
+	bottom:0px;
+	width:80px;
+	height:80px;
+	line-height:80px;
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	text-align:center;
+	color:#fff;
+	cursor:pointer;
+	opacity:1
+}
+#navs>li,#navs:after{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	border-radius:50%;
+	-webkit-border-radius:50%;
+	background-color:#4ECDC4;
+}
+#navs>li{
+	transition:all .6s;
+	-webkit-transition:all .6s;
+	-moz-transition:.6s;
+}
+#navs:after{
+	content:attr(data-close);
+	z-index:0;
+	border-radius:50%;
+	-webkit-border-radius:50%;
+}
+#navs.active:after{
+	content:attr(data-open)
+}
